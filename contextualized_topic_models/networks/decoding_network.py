@@ -89,7 +89,7 @@ class DecoderNetwork(nn.Module):
 
         # init prior parameters
         # \mu_1k = log \alpha_k + 1/K \sum_i log \alpha_i;
-        # \alpha = 1 \forall \alpha
+        # \alpha = self.prior_alpha \forall \alpha
         topic_prior_mean = 0.0
         self.prior_mean = torch.tensor([topic_prior_mean] * n_components)
         if torch.cuda.is_available():
