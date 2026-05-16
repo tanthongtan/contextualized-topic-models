@@ -322,7 +322,7 @@ class CTM:
                    Save Dir: {}".format(
                     self.n_components,
                     0.0,
-                    1.0 - (1.0 / self.n_components),
+                    (1.0 / self.prior_alpha) * (1.0 - (1.0 / self.n_components)),
                     self.model_type,
                     self.hidden_sizes,
                     self.activation,
@@ -628,7 +628,7 @@ class CTM:
         model_dir = "contextualized_topic_model_nc_{}_tpm_{}_tpv_{}_hs_{}_ac_{}_do_{}_lr_{}_mo_{}_rp_{}".format(
             self.n_components,
             0.0,
-            1 - (1.0 / self.n_components),
+            (1.0 / self.prior_alpha) * (1.0 - (1.0 / self.n_components)),
             self.model_type,
             self.hidden_sizes,
             self.activation,
